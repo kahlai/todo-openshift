@@ -93,7 +93,6 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: todo
 spec:
-  host: todo-todo-app.apps.cluster-dggdt.dggdt.gcp.redhatworkshops.io
   to:
     kind: Service
     name: todo
@@ -104,13 +103,3 @@ spec:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
-status:
-  ingress:
-    - host: todo-todo-app.apps.cluster-dggdt.dggdt.gcp.redhatworkshops.io
-      routerName: default
-      conditions:
-        - type: Admitted
-          status: 'True'
-          lastTransitionTime: '2024-09-09T06:14:35Z'
-      wildcardPolicy: None
-      routerCanonicalHostname: router-default.apps.cluster-dggdt.dggdt.gcp.redhatworkshops.io
